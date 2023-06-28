@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Semana14.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout>
+        <Entry
+            x:Name="txtName"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Enter Name" />
+        <Editor
+            x:Name="txtDescription"
+            HeightRequest="100"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Enter Description" />
+        <Entry
+            x:Name="txtPrice"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Enter Price" />
+
+        <DatePicker x:Name="txtdate" HorizontalOptions="FillAndExpand" />
+
+        <StackLayout Orientation="Horizontal">
+            <Button Clicked="Button_Clicked" Text="Save" />
+            <Button Clicked="Button_Clicked_1" Text="Show" />
+
+        </StackLayout>
+        <Entry
+            x:Name="txtFilter"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Filter" />
+        <Button Clicked="Button_Clicked_2" Text="ShowByText" />
+
+        <ListView x:Name="lvlProduct">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding Description}" />
+                            <Label Text="{Binding Price}" />
+                            <Label Text="{Binding ExpireDate}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
