@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Semana14.Models
 {
-    internal class Product
+    public class Product
     {
         
        public String Productosid { get; set; }
